@@ -1,0 +1,412 @@
+① 클러스터링 파일에 대한 세부설명
+_README(K-Means).txt: 클러스터링 분석 설명 파일
+BARRIER_FREE_FINAL.ipynb: 클러스터링 분석 실행 파일 (Jupyter Notebook)
+BARRIER_FREE_FINAL.py: 클러스터링 분석 실행 파일 (Python)
+DATASET.csv: 입력 데이터셋 
+BARRIER_FREE.xlsx: 출력 데이터셋
+
+② 각 파일의 실행 순서
+1) '_README(K-Means).txt' 파일 참고한 후, 2) 'BARRIER_FREE_FINAL.ipynb' 실행, 3) 'BARRIER_FREE.xlsx' 출력 확인
+
+③ 프로그래밍 언어 버전
+본 분석은 'Jupyter Notebook (anaconda3) 6.0.3' 에서 진행되었음.
+실행 환경(Jupyter Notebook, Python)에 맞춰 선택할 수 있도록, 'ipynb', 'py' 2가지의 형태로 제공하고 있음. 
+
+④ 사용한 라이브러리 목록 및 버전
+Package                            Version            
+---------------------------------- -------------------
+alabaster                          0.7.12             
+anaconda-client                    1.7.2              
+anaconda-navigator                 1.9.12             
+anaconda-project                   0.8.3              
+argh                               0.26.2             
+asn1crypto                         1.3.0              
+astroid                            2.3.3              
+astropy                            4.0                
+atomicwrites                       1.3.0              
+attrs                              19.3.0             
+autopep8                           1.4.4              
+Babel                              2.8.0              
+backcall                           0.1.0              
+backports.functools-lru-cache      1.6.1              
+backports.shutil-get-terminal-size 1.0.0              
+backports.tempfile                 1.0                
+backports.weakref                  1.0.post1          
+bcrypt                             3.1.7              
+beautifulsoup4                     4.8.2              
+bitarray                           1.2.1              
+bkcharts                           0.2                
+bleach                             3.1.0              
+bokeh                              1.4.0              
+boto                               2.49.0             
+Bottleneck                         1.3.2              
+certifi                            2019.11.28         
+cffi                               1.14.0             
+chardet                            3.0.4              
+Click                              7.0                
+cloudpickle                        1.3.0              
+clyent                             1.2.2              
+colorama                           0.4.3              
+comtypes                           1.1.7              
+conda                              4.8.2              
+conda-build                        3.18.11            
+conda-package-handling             1.6.0              
+conda-verify                       3.4.2              
+contextlib2                        0.6.0.post1        
+cryptography                       2.8                
+cycler                             0.10.0             
+Cython                             0.29.15            
+cytoolz                            0.10.1             
+dask                               2.11.0             
+decorator                          4.4.1              
+defusedxml                         0.6.0              
+diff-match-patch                   20181111           
+distributed                        2.11.0             
+docutils                           0.16               
+entrypoints                        0.3                
+et-xmlfile                         1.0.1              
+fastcache                          1.1.0              
+filelock                           3.0.12             
+flake8                             3.7.9              
+Flask                              1.1.1              
+fsspec                             0.6.2              
+future                             0.18.2             
+gevent                             1.4.0              
+glob2                              0.7                
+greenlet                           0.4.15             
+h5py                               2.10.0             
+HeapDict                           1.0.1              
+html5lib                           1.0.1              
+hypothesis                         5.5.4              
+idna                               2.8                
+imageio                            2.6.1              
+imagesize                          1.2.0              
+importlib-metadata                 1.5.0              
+intervaltree                       3.0.2              
+ipykernel                          5.1.4              
+ipython                            7.12.0             
+ipython-genutils                   0.2.0              
+ipywidgets                         7.5.1              
+isort                              4.3.21             
+itsdangerous                       1.1.0              
+jdcal                              1.4.1              
+jedi                               0.14.1             
+Jinja2                             2.11.1             
+joblib                             0.14.1             
+json5                              0.9.1              
+jsonschema                         3.2.0              
+jupyter                            1.0.0              
+jupyter-client                     5.3.4              
+jupyter-console                    6.1.0              
+jupyter-core                       4.6.1              
+jupyterlab                         1.2.6              
+jupyterlab-server                  1.0.6              
+keyring                            21.1.0             
+kiwisolver                         1.1.0              
+lazy-object-proxy                  1.4.3              
+libarchive-c                       2.8                
+llvmlite                           0.31.0             
+locket                             0.2.0              
+lxml                               4.5.0              
+MarkupSafe                         1.1.1              
+matplotlib                         3.1.3              
+mccabe                             0.6.1              
+menuinst                           1.4.16             
+mglearn                            0.1.9              
+mistune                            0.8.4              
+mkl-fft                            1.0.15             
+mkl-random                         1.1.0              
+mkl-service                        2.3.0              
+mock                               4.0.1              
+more-itertools                     8.2.0              
+mpmath                             1.1.0              
+msgpack                            0.6.1              
+multipledispatch                   0.6.0              
+navigator-updater                  0.2.1              
+nbconvert                          5.6.1              
+nbformat                           5.0.4              
+networkx                           2.4                
+nltk                               3.4.5              
+nose                               1.3.7              
+notebook                           6.0.3              
+numba                              0.48.0             
+numexpr                            2.7.1              
+numpy                              1.18.1             
+numpydoc                           0.9.2              
+olefile                            0.46               
+openpyxl                           3.0.3              
+packaging                          20.1               
+pandas                             1.0.1              
+pandocfilters                      1.4.2              
+paramiko                           2.7.1              
+parso                              0.5.2              
+partd                              1.1.0              
+path                               13.1.0             
+pathlib2                           2.3.5              
+pathtools                          0.1.2              
+patsy                              0.5.1              
+pep8                               1.7.1              
+pexpect                            4.8.0              
+pickleshare                        0.7.5              
+Pillow                             7.0.0              
+pip                                20.0.2             
+pkginfo                            1.5.0.1            
+pluggy                             0.13.1             
+ply                                3.11               
+prometheus-client                  0.7.1              
+prompt-toolkit                     3.0.3              
+psutil                             5.6.7              
+py                                 1.8.1              
+pycodestyle                        2.5.0              
+pycosat                            0.6.3              
+pycparser                          2.19               
+pycrypto                           2.6.1              
+pycurl                             7.43.0.5           
+pydocstyle                         4.0.1              
+pyflakes                           2.1.1              
+Pygments                           2.5.2              
+pylint                             2.4.4              
+PyNaCl                             1.3.0              
+pyodbc                             4.0.0-unsupported  
+pyOpenSSL                          19.1.0             
+pyparsing                          2.4.6              
+pyreadline                         2.1                
+pyrsistent                         0.15.7             
+PySocks                            1.7.1              
+pytest                             5.3.5              
+pytest-arraydiff                   0.3                
+pytest-astropy                     0.8.0              
+pytest-astropy-header              0.1.2              
+pytest-doctestplus                 0.5.0              
+pytest-openfiles                   0.4.0              
+pytest-remotedata                  0.3.2              
+python-dateutil                    2.8.1              
+python-jsonrpc-server              0.3.4              
+python-language-server             0.31.7             
+pytz                               2019.3             
+PyWavelets                         1.1.1              
+pywin32                            227                
+pywin32-ctypes                     0.2.0              
+pywinpty                           0.5.7              
+PyYAML                             5.3                
+pyzmq                              18.1.1             
+QDarkStyle                         2.8                
+QtAwesome                          0.6.1              
+qtconsole                          4.6.0              
+QtPy                               1.9.0              
+requests                           2.22.0             
+rope                               0.16.0             
+Rtree                              0.9.3              
+ruamel-yaml                        0.15.87            
+scikit-image                       0.16.2             
+scikit-learn                       0.22.1             
+scipy                              1.4.1              
+seaborn                            0.10.0             
+Send2Trash                         1.5.0              
+setuptools                         45.2.0.post20200210
+simplegeneric                      0.8.1              
+singledispatch                     3.4.0.3            
+six                                1.14.0             
+snowballstemmer                    2.0.0              
+sortedcollections                  1.1.2              
+sortedcontainers                   2.1.0              
+soupsieve                          1.9.5              
+Sphinx                             2.4.0              
+sphinxcontrib-applehelp            1.0.1              
+sphinxcontrib-devhelp              1.0.1              
+sphinxcontrib-htmlhelp             1.0.2              
+sphinxcontrib-jsmath               1.0.1              
+sphinxcontrib-qthelp               1.0.2              
+sphinxcontrib-serializinghtml      1.1.3              
+sphinxcontrib-websupport           1.2.0              
+spyder                             4.0.1              
+spyder-kernels                     1.8.1              
+SQLAlchemy                         1.3.13             
+statsmodels                        0.11.0             
+sympy                              1.5.1              
+tables                             3.6.1              
+tblib                              1.6.0              
+terminado                          0.8.3              
+testpath                           0.4.4              
+toolz                              0.10.0             
+tornado                            6.0.3              
+tqdm                               4.42.1             
+traitlets                          4.3.3              
+ujson                              1.35               
+unicodecsv                         0.14.1             
+urllib3                            1.25.8             
+watchdog                           0.10.2             
+wcwidth                            0.1.8              
+webencodings                       0.5.1              
+Werkzeug                           1.0.0              
+wheel                              0.34.2             
+widgetsnbextension                 3.5.1              
+win-inet-pton                      1.1.0              
+win-unicode-console                0.5                
+wincertstore                       0.2                
+wrapt                              1.11.2             
+xlrd                               1.2.0              
+XlsxWriter                         1.2.7              
+xlwings                            0.17.1             
+xlwt                               1.3.0              
+xmltodict                          0.12.0             
+yapf                               0.28.0             
+zict                               1.0.0              
+zipp                               2.2.0             
+
+
+⑤ 코드 실행 시 참고 및 주의사항
+
+--- STEP1) Import libararies
+
+본 분석에서는 데이터셋 로드, 데이터 스케일링, 주성분 분석(Principal Component Analysis), 엘보우 메서드(Elbow Method), K평균 군집화(K-Means Clustering), 결과 저장 순으로 진행함.
+
+따라서 첫째로 데이터 처리 및 분석을 위한 pandas, 과학적 계산을 위한 numpy, 머신러닝 알고리즘(군집 분석 등)을 위한 scikit-learn과 관련 수치해석을 위한 scipy, 과학 계산용 그래프를 표현하기 위한 matplotlib 라이브러리를 순차적으로 호출함. ---
+
+# For data manipulation and analysis
+import pandas as pd
+from pandas import Series, DataFrame
+
+# For scientific computing
+import numpy as np
+
+# For clustering algorithm (K-Means)
+from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler, MaxAbsScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+from scipy.spatial import distance
+from scipy.spatial.distance import cdist, pdist
+from sklearn.metrics import euclidean_distances
+from sklearn.metrics import silhouette_score
+
+# For visulization
+import matplotlib.pyplot as plt
+import matplotlib
+from math import sqrt
+from mpl_toolkits.mplot3d import Axes3D
+
+
+--- STEP2) Load csv data
+
+입출력이 이루어지는 작업 공간을 확인하고, 분석 데이터셋을 불러오기 위해 현재 작업 공간 내 위치한 'DATASET.csv' 파일을 가져온 후, 자료의 형태를 확인함(출력 결과물 또한 동일한 작업 공간에 저장). ---
+
+import os 
+os.getcwd() # Get my working directory (current working directory)
+
+df=pd.read_csv('DATASET.csv', index_col='ID')
+df.head()
+
+
+--- STEP3) Data scaling
+
+효과적인 데이터 알고리즘 학습을 위해 데이터 스케일링을 실시함.
+원 데이터의 형태를 고려하여 Scikit-Learn에서 제공되는 스케일러 중 최대/최소값이 1 ,0이 되도록 하는 MinMaxScaler를 사용하였음.  ---
+
+# Scaler: StandardScaler, RobustScaler, MinMaxScaler, MaxAbsScaler
+
+scaled = MinMaxScaler().fit_transform(df)
+features = ['DISALBED', 'SHOPPING MALL', 'TAXI', 'EMPLOYEE','WELFARE CENTER','CARD']
+pd.DataFrame(scaled, columns=features)
+
+
+--- STEP4) Principal Component Analysis
+
+6개의 변수의 차원을 축소하고자 주성분 분석을 실시함.
+우선적으로 주성분 수를 선택하기 위해, 설명된 분산의 비율이 80%가 넘는 지점인 3개의 차원으로 축소하였음.
+(여기서 '80%'란 비율은 정해진 규칙은 아니나 기존의 연구자들의 경험에 의해 권장되는 수치로 본 분석에서 참고하였음.) ---
+
+pca = PCA(n_components=3) # n=3, 0.835 (83.5%) (Explained variance ratio should be at least 0.8)
+values_pca = pca.fit_transform(scaled)
+principalDf = pd.DataFrame(data=values_pca, columns = ['PC-1', 'PC-2','PC-3'])
+print('Explained variance ratio :', pca.explained_variance_ratio_)
+
+principalDf
+
+
+--- STEP5 Elbow method
+
+K-Means 클러스터링 분석을 위해 데이터셋의 클러스트 수를 결정할 필요가 있다.
+본 분석에서는 보편적으로 많이 사용되고 있는 엘보우 메서드를 사용하였고, 3개의 군집이 최적이라 도출하였음. ---
+
+# Using the elbow method to determine the optimal number of clusters for k-means clustering
+
+def elbow_method(data):
+    K = range(2,6) 
+    KM = [KMeans(n_clusters=k).fit(data) for k in K] 
+    centroids = [k.cluster_centers_ for k in KM] 
+    D_k = [cdist(data, cent, 'euclidean') for cent in centroids] 
+    cIdx = [np.argmin(D,axis=1) for D in D_k]
+    dist = [np.min(D,axis=1) for D in D_k]
+    avgWithinSS = [sum(d)/data.shape[0] for d in dist]
+
+    # Total with-in sum of square
+    wcss = [sum(d**2) for d in dist]
+    tss = sum(pdist(data)**2)/data.shape[0]
+    bss = tss-wcss
+    
+
+    # Elbow curve
+    fig = plt.figure() 
+    ax = fig.add_subplot(111)
+    
+    kIdx = 1
+    ax.plot(K, avgWithinSS, 'b*-')
+    ax.plot(K[kIdx], avgWithinSS[kIdx], marker='o', markersize=15, 
+    markeredgewidth=2, markeredgecolor='r', markerfacecolor='None')
+    
+    kIdx = 2
+    ax.plot(K, avgWithinSS, 'b*-')
+    ax.plot(K[kIdx], avgWithinSS[kIdx], marker='o', markersize=10, 
+    markeredgewidth=2, markeredgecolor='b', markerfacecolor='None')
+    
+    plt.grid(True)
+    plt.xlabel('Number of clusters')
+    plt.ylabel('Average within-cluster sum of squares')
+    plt.title('Elbow for K-Means clustering')
+
+elbow_method(values_pca) # Optimal K for K-Means = 3
+
+
+--- STEP6 
+
+앞서 도출된 최적의 군집 수 3개를 적용하여, K-Means 클러스터링 분석을 하였음.
+클러스터링 분석 결과값이 이상 없이 도출되었는지 3차원 그래프를 통해 확인 후 라벨링하여 작업공간 내 'BARRIER_FREE.xlsx' 파일로 출력함. ---
+
+
+# K-Means Clustering
+
+fig = plt.figure(1, figsize=(9, 7)) 
+ax = Axes3D(fig, elev=-150, azim=230)
+
+kmeans = KMeans(init='k-means++', n_clusters=3, n_init=5) # Opitmal K = 3
+kmeans.fit(values_pca)
+
+ax.scatter(values_pca[:, 0], values_pca[:, 1], values_pca[:, 2], 
+           c=kmeans.labels_.astype(np.float), s=300
+          )
+
+cntr = kmeans.cluster_centers_
+ax.scatter(cntr[0][0],cntr[0][2],cntr[0][1],c = 'red',marker="x",s=1000)
+ax.scatter(cntr[1][0],cntr[1][2],cntr[1][1],c = 'red',marker="x",s=1000)
+ax.scatter(cntr[2][0],cntr[2][2],cntr[2][1],c = 'red',marker="x",s=1000)
+
+
+# For visualization
+
+ax.set_title('K-Means clustering (PCA-reduced data)\n'
+             'Centroids are marked with red cross')
+
+ax.set_xlabel("Principal Component 1")
+ax.w_xaxis.set_ticklabels([])
+ax.set_ylabel("Principal Component 2")
+ax.w_yaxis.set_ticklabels([])
+ax.set_zlabel("Principal Component 3")
+ax.w_zaxis.set_ticklabels([])
+
+
+# Labeling
+
+df['CLUSTERING RESULT']=kmeans.labels_
+df.head()
+
+df.to_excel('BARRIER_FREE.xlsx')
