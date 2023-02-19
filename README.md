@@ -65,71 +65,123 @@
 ######################[1_1. 데이터 파일명 설명]######################
 
 1) shp(서울시 동별)
+
    (1) Raw Data
+   
        	: DATA_LSMD_ADM_SECT_UMD_서울_동별_raw
+	
    (2) 동일 이름 동 수정 (QGIS + 엑셀에서 처리)
+   
        	: DATA_LSMD_ADM_SECT_UMD_서울_동별_prc
 
 2) 서울시 장애인 현황(장애유형별,동별) 통계
+
    (1) Raw Data
+   
        	: DATA_서울시 장애인 현황(장애유형별,동별) 통계_raw (확장자 txt)
+	
    (2) 최종 전처리 완료 Data
+   
        	: DATA_서울시 장애인 현황(장애유형별, 동별) 통계_prc
 
 3) 장애인 구인 현황
+
    (1) Raw Data
+   
        	: DATA_장애인 구인 현황_raw
+	
    (2) Raw Data에서 지역구 / 법정동 / 위도+경도 추가 (엑셀에서 처리)
+   
        	: DATA_장애인 구인 현황_EMD_NM_prc
+	
    (3) shp(서울시 동별) 데이터 + 장애인 구인 현황
+   
        	: DATA_장애인 구인 현황_EMD_NM_(shp)1stJOIN_prc
+	
           	=> 동 수정 필요한 데이터 탐색 위한 파일
+		
    (4) 법정동 기준으로 동 변경 (엑셀 처리)
+   
         	: DATA_장애인 구인 현황_EMD_NM_(shp)1stJOIN_(법정동수정)_prc
+		
    (5) 최종 전처리 완료 Data
+   
         	: DATA_장애인 구인 현황_prc
 
 4) 서울시 충전소 ALL
+
    (1) Raw Data
+   
        	: DATA_서울시 충전소_공공데이터포털_raw
+	
          	+ DATA_서울시 충전소_서울교통공사+스마트서울맵
+		
    (2) 최종 전처리 완료 데이터셋
+   
        	: DATA_서울시 충전소 ALL_prc
 
 5) 대규모점포 인허가 정보
+
    (1) Raw Data
+   
        	: DATA_대규모점포 인허가 정보_raw
+	
    (2) 최종 전처리 완료 Data
+   
        	: DATA_대규모점포 인허가 정보_prc
 
 6) 서울시 장애인시설 현황
+
    (1) Raw Data
+   
        	: DATA_서울시 장애인시설 현황_raw
+	
    (2) 최종 전처리 완료 Data
+   
        	: DATA_서울시 장애인시설 현황_prc
 
 7) 장애인콜택시 이용고객 목적지(동단위) Best100
+
    (1) Raw Data
+   
        	: DATA_장애인콜택시 이용고객 목적지(동단위) Best100_raw
+	
    (2) Raw Data에서 ‘서울특별시’ 데이터만 추출한 Data
+   
        	: DATA_장애인콜택시 이용고객 목적지(동단위) Best100_Seoul_prc
+	
    (3) 2번 데이터에서 동별 택시 건수 sum
+   
        	: DATA_장애인콜택시 이용고객 목적지(동단위) Best100_Seoul_dong_prc
+	
    (4) 법정동 기준으로 동 변경 (엑셀 처리)
+   
        	: DATA_장애인콜택시 이용고객 목적지(동단위) Best100_Seoul_dong_(법정동수정)_prc
+	
    (5) 최종 전처리 완료 Data
+   
        	: DATA_장애인콜택시 이용고객 목적지(동단위) Best100_prc
+	
   
 8) 서울시 신한카드 장애인 복지카드 이용현황
+
    (1) Raw Data
+   
        	: QGIS 좌표 이미지 반출 (0. RAW DATA > 서울시 신한카드 장애인 복지카드 이용현황_raw 내에 위치)
+	
    (2) 최종 전처리 완료 Data
+   
        	: DATA_서울시 신한카드 장애인 복지카드 이용현황_prc
+	
 
 9) 최종 전처리 완료 데이터셋
+
    (1) 최종 전처리 완료 데이터셋
+   
        	: DATA_TOTAL DATASET (1. PROCESSED DATA > JOIN DATA 내에 위치)
+	
    (2) QGIS 시각화를 위해 1을 전처리한 데이터셋
+   
        	: DATA_K-Means_Clustering (3. QGIS > QGIS_DATA 내에 위치)
 
 
